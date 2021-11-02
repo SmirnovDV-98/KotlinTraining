@@ -113,14 +113,19 @@ fun subStringSearchFromPosition(s:String,subString:String, n:Int):Boolean{
 }
 
 fun registerCheck(s:String){
-    if (s==s.uppercase()){
-        println("String $s in UPPERCASE")
-    } else if (s==s.lowercase()){
-        println("String $s in lowercase")
-    } else if (s==s.replaceFirstChar { it.uppercase() }){
-        println("String $s is capitalized")
-    } else {
-        println("String $s is something else")
+    when(s){
+        s.uppercase()->{
+            println("String $s in UPPERCASE")
+        }
+        s.lowercase()->{
+            println("String $s in lowercase")
+        }
+        s.replaceFirstChar { it.uppercase() }->{
+            println("String $s is capitalized")
+        }
+        else->{
+            println("String $s is something else")
+        }
     }
 }
 /**
