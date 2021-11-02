@@ -100,7 +100,7 @@ fun subStringSearchFromPosition(s:String,subString:String, n:Int):Boolean{
     val sToCharArr=s.toCharArray(n-1)
     for (i in 0..sToCharArr.size-1-(subString.length-1)){
         var counter =0
-        for (j in 0 until subString.length){
+        for (j in subString.indices){
             if (sToCharArr[i+j]==subString[j]){
                 counter++
             }
