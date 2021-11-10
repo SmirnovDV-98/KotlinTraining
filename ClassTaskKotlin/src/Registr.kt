@@ -1,9 +1,7 @@
-import java.lang.Exception
-
 class Register (
-    var regValue: Int = 0,
-    private var flagN:Boolean,
-    private var flagZ:Boolean) {
+    var regValue: Int = 0,) {
+    private var flagN:Boolean
+    private var flagZ:Boolean
     init {
         flagN=(regValue<0)
         flagZ=(regValue==0)
@@ -26,15 +24,17 @@ class Register (
     fun changeNFlag(){
         this.flagN = this.regValue<0
     }
-    fun changeYFlag(){
+    fun changeZFlag(){
         this.flagZ=(this.regValue==0)
     }
     fun getNFlag():Boolean=this.flagN
 
-    fun getFlagY():Boolean=this.flagZ
+    fun getFlagZ():Boolean=this.flagZ
 
-}
+    override fun toString():String{
+        return "This is register ${super.toString()} \nWith value: $regValue \nLesser then null?: $flagN \nIs null?: $flagZ"
+    }
+    class CustomException: Exception() {
 
-class CustomException: Exception() {
-
+    }
 }
